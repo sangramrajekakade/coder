@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+
+{% for obj in post %}
+
+<h3 class="subtitle"><strong>{{ forloop.counter }} . {{ obj.title }}</strong></h3>
+<h4 class="subtitle" >{{ obj.description | truncatewords:"50" }}</h4>
+
+<a style="text-decoration-color: #363636; color: #363636;" class="subtitle"href="{% url 'detail-blog' obj.id %}"> See more --> </a><br><br>
+{% endfor %}
+
+{% endblock %}
+  

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+
+{% for obj in pro %}
+
+<h3 class="subtitle"><strong>{{ forloop.counter }} . {{ obj.ProjectName }}</strong></h3>
+<h4 class="subtitle" >{{ obj.technologies }}</h4>
+<h4 class="subtitle" >{{ obj.details }}</h4>
+
+{% endfor %}
+
+{% endblock %}
+  

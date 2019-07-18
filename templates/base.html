@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <head>
+    
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sangram Kakade </title>
+{% block head_css %}
+<style type="text/css">
+  .tabs li.is-active a {
+    border-bottom-color: #4a4a4a !important;
+    color: #4a4a4a !important;
+
+
+    #tab-content p {
+  display: none;
+}
+
+#tab-content p.is-active {
+  display: block;
+}
+}
+</style>
+{% endblock %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+
+   <link href="{% static 'fontawesome/css/all.css'%}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+
+  <body>{% block content %}
+  
+{% block header %}
+  <section class="section">
+    <div class="container">
+      <a href="/" style="text-decoration:none;"><h1 class="title"> < Sangram Kakade   />  </h1>
+      <p class="subtitle ">Django Developer <strong> | </strong> Linux Enthusiast</p>
+</a>
+      <div class="tabs  is-centered">
+      
+        <ul>
+          <li><a href="{% url 'ProjectsPage' %}" style="color: #363636;text-decoration-color: #363636; width: 250px; font-weight: bold;" ><strong> < Projects /> </a></strong></li>
+
+
+          <li>
+            <a href="/blog" style="text-decoration-color: #363636; color: #363636; width: 250px">
+              <strong> < Blog /> </strong></a></li>
+          <li><a href="{% url 'Contact' %}" style="text-decoration-color: #363636; color: #363636; width: 250px"><strong> < Hire Me /> </strong></a></li>
+
+
+          <li><a href="" style="text-decoration-color: #363636; color: #363636; width: 250px" ><strong> < Galary /> </a></strong></li>
+  
+        </ul>
+      </div>
+ {% endblock %}
+          {% block main %}
+          
+
+
+          {% endblock %}
+
+
+</section>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#tabs ul li').on('click', function() {
+    var tab = $(this).data('tab');
+
+    $('#tabs li').removeClass('is-active');
+    $(this).addClass('is-active');
+
+    $('#tab-content p').removeClass('is-active');
+    $('p[data-content="' + tab + '"]').addClass('is-active');
+  });
+});
+
+</script>
+  </body>
+</html>
+
+{% endblock %}

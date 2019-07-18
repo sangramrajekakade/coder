@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block main %}
+  
+
+<p style="flex-direction: column;" class="subtitle "><strong>< Blog Posts /></strong></p>
+
+{% for obj in post %}
+
+<h3 class="subtitle"><strong>{{ forloop.counter }} . {{ obj.title }}</strong></h3>
+<h4 class="subtitle" >{{ obj.description | truncatewords:"50" }}</h4>
+
+<a style="text-decoration-color: #363636; color: #363636;" class="subtitle"href="{% url 'detail-blog' obj.id %}"> See more --> </a><br><br>
+{% endfor %}
+
+<hr>
+
+
+
+
+<br><br><br><br>
+<h3 class="subtitle"><strong>< Projects /></strong></h3>
+
+{% for obj in pro %}
+
+<h3 class="subtitle"><strong>{{ forloop.counter }} . {{ obj.ProjectName }}</strong></h3>
+<h4 class="subtitle" >{{ obj.technologies }}</h4>
+<h4 class="subtitle" >{{ obj.details }}</h4>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block main %}
+
+<form method="POST">{% csrf_token %}
+<div class="field">
+  <label class="label">Full Name</label>
+  <div class="control">
+    <input name="Name" class="input" type="text" placeholder="e.g. Sangram Kakade">
+  </div>
+</div>
+
+
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control">
+    <input name="email" class="input " type="email" placeholder="example@example.com">
+  </div>
+</div>
+
+
+
+<div class="field">
+  <label class="label">Message</label>
+  <div class="control">
+    <textarea name="Message" class="textarea" placeholder="Your Message"></textarea>
+  </div>
+</div>
+
+
+<div class="field is-grouped">
+  <div class="control">
+    <button type="POST" style="background-color:#363636; color: #FFF" class="button">Submit</button>
+  </div>
+  <div class="control">
+    <button   class="button is-text">Cancel</button>
+  </div>
+</div>
+</form>
+
+    <div class="col-sm-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4" style="float: right;">
+  <div class="card" style="width:300px" >
+      <img class="card-img-top" src="{% static '/images/sangram_kakade.jpg' %}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">Sangram Kakade</h4>
+        <p class="card-text">Django Developer | Linux Enthusiast</p>
+        <p>
+          <i class="fa fa-envelope" aria-hidden="true"></i>  sangramrajekakade@gmail.com
+          <br />
+          <i class="fa fa-linkedin" aria-hidden="true"></i>/sangramrajekakade
+          <br />
+          <i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/sangramrajekakade">/sangramrajekakade</a>
+          <br />
+          <i class="fa fa-map-marker" aria-hidden="true"></i>  Pune
+        </p>
+
+
+        <a href="#" style="background-color: #363636; color: #FFFF;" class="btn stretched-link">See Profile</a>
+      </div>
+  </div>
+  </div>
+
+{% endblock %}
+
